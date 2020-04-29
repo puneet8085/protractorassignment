@@ -1,0 +1,15 @@
+{
+  "name": "assignmentprotractor",
+  "version": "1.0.0",
+  "description": "Protractor Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Puneet Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "protractor": "^5.3.2",
+    "jasmine": "^3.1.0"
+  }
+}
