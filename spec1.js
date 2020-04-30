@@ -1,13 +1,13 @@
 
+let  number=    Math.floor((Math.random() * 100000) + 10000);
+global.username= `xyz${number}@test.com`
+
 describe("Open application",function()
 {
     it("and do registeration for signIn,then verify my account page ",function()
     {
-        //generate random number and add in email to make it unique
-    let number=    Math.floor((Math.random() * 100000) + 10000);
-        
     element(by.className('login')).click();
-    element(by.id('email_create')).sendKeys(`test${number}@test.com`);
+    element(by.id('email_create')).sendKeys(username);
     element(by.className('icon-user left')).click();
     element(by.id('id_gender1')).click();
     element(by.id('customer_firstname')).sendKeys('puneet');
@@ -54,7 +54,6 @@ describe("Open application",function()
                                                                         })
     element(by.id('postcode')).sendKeys(12200);
     element(by.id('phone_mobile')).sendKeys(1234567890);
-    element(by.id('alias')).sendKeys('testter field');
     element(by.id('submitAccount')).click();
     expect(browser.getTitle()).toEqual('My account - My Store')
 
