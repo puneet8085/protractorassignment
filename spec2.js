@@ -1,4 +1,3 @@
-
 describe('add product and order',function(){
     it(',also verify order details',function(){      
    element(by.className('home')).click();
@@ -15,7 +14,7 @@ describe('add product and order',function(){
     expect(element(By.css("a[class='btn btn-default button button-medium'] span")).isPresent()).toEqual(true)
     element(by.css("a[class='btn btn-default button button-medium'] span")).click();
     element(By.css("a[class='button btn btn-default standard-checkout button-medium'] span")).click()
-    //element(by.id('email')).sendKeys(username);
+    //element(by.id('email')).sendKeys('xyz105371@test.com');
    // element(by.id('passwd')).sendKeys('abc@123');       
     //element(by.id('SubmitLogin')).click();
     browser.sleep(9000)

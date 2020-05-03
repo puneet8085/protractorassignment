@@ -1,12 +1,14 @@
 exports.config={
     seleniumAddress:"http://localhost:4444/wd/hub",
-    specs:['spec1.js','spec2.js'],
-   
+    specs:['spec1.js','spec2.js','spec3.js'],
+  
 spec: { displayStacktrace: true },
 
 jasmineNodeOpts: {
     defaultTimeoutInterval: 2500000
     },
+
+
 onPrepare: function() {
 
     browser.manage().window().maximize()
@@ -16,12 +18,12 @@ onPrepare: function() {
    browser.get('http://automationpractice.com/index.php')
 },
 
-//multiCapabilities:[{
-//     browserName:'chrome'
-// },
-// {
-//     browserName:'firefox'
-// }],
+multiCapabilities:[{
+    browserName:'chrome'
+},
+{
+    browserName:'firefox'
+}],
 
 
 
