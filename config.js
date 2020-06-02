@@ -1,6 +1,6 @@
 exports.config={
     seleniumAddress:"http://localhost:4444/wd/hub",
-    specs:['spec1.js','spec2.js','spec3.js'],
+    specs:['readrowwisedatafromexcel.ts'],
   
 spec: { displayStacktrace: true },
 

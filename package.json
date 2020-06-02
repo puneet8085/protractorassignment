@@ -9,6 +9,7 @@
   "author": "Puneet Sharma",
   "license": "ISC",
   "dependencies": {
+    "exceljs": "^3.9.0",
     "jasmine": "^3.1.0",
     "protractor": "^5.3.2",
     "xlsx": "^0.16.1"
