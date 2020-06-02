@@ -2,10 +2,9 @@
 let  number=    Math.floor((Math.random() * 100000) + 10000);
 global.username= `xyz${number}@test.com`
 
-describe("Open application",function()
-{
-    it("and do registeration for signIn,then verify my account page ",function()
-    {
+
+
+
     element(by.className('login')).click();
     element(by.id('email_create')).sendKeys(username);
     element(by.className('icon-user left')).click();
