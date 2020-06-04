@@ -1,5 +1,9 @@
 var xlsx=require("xlsx");
 
+// always declare file location to below variable.
+var fileaddress=".\\resource\\Questionare on Regression testing.xlsx";
+
+
 //method to convert excel data into JSon and return that json 
 function exceltojson(filepath)
 {
@@ -11,12 +15,17 @@ return data;
 
 }
 
-//calling method which convert excel data into Json  by passing excel path and storing in a variable
-var jsonarray = exceltojson(".\\resource\\Questionare on Regression testing.xlsx")
+
+
 
 //method to return json object having data of a particular row of excel
-function ReturnSpecificRowDataInJsonFormat(rowno)
+function ReturnSpecificRowDataInJsonFormat(rowno,addressOfFile)
 {
+    addressOfFile=fileaddress;
+
+//calling method which convert excel data into Json  by passing excel path and storing in a variable
+var jsonarray = exceltojson(addressOfFile)
+
     var index = [];
 for (var x in jsonarray) {
    index.push(x);
