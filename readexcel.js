@@ -1,12 +1,9 @@
 
-// const fs = require('fs');
-
-// var json2xlsx = require('json2xlsx');
-
 var xlsx=require("xlsx");
 var jsonarray;
 var workbook
 var sheet
+
 // always declare file location to below variable.
 var fileaddress=".\\resource\\Questionare on Regression testing.xlsx";
 
@@ -48,26 +45,24 @@ var specificdataofrow= ReturnSpecificRowDataInJsonFormat(5)
 //adding new key and value in json array. Syntex is jsonobject.newKey="value"
 specificdataofrow.TestCaseStatus ="pass";
 
-//var workbook2= xlsx.utils.book_new;
+ //code to write back json array into new worksheet
 
+ //calling method which write back into same excel after appending a new sheet
+ var writetoexcel=jsonToExcel()
 
+ //method to write back into same excel.
+function jsonToExcel()
+{
+    let  number=    Math.floor((Math.random() * 100000) + 10000);
+
+  //pass your json object in "json to sheet method" as i pass data to log error in sheet
+  sheet=xlsx.utils.json_to_sheet(jsonarray)
  
 
-//code to write back json array into new worksheet
-
-var workbook2= xlsx.utils.book_new;
-var workbook2= xlsx.utils.book_new;
+  xlsx.utils.book_append_sheet(workbook,sheet,`StatusSheet${number}`);
 
 
- //pass your json object in "json to sheet method" as i pass data to log error in sheet
-var Sheet2=xlsx.utils.json_to_sheet(jsonarray)
- // pass your json object in "json to sheet method" as i pass data to log error in sheet
- var Sheet2=xlsx.utils.json_to_sheet(jsonarray)
+ //sheet in which you want to write
+ xlsx.writeFile(workbook,fileaddress)
 
-xlsx.utils.book_append_sheet(workbook,Sheet2,"LogError");
- xlsx.utils.book_append_sheet(workbook,Sheet2,"LogError");
-
-
-//sheet in which you want to write
-xlsx.writeFile(workbook,"NewDatasheet.xlsx")
-
+}
