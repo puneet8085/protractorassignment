@@ -53,13 +53,21 @@ specificdataofrow.TestCaseStatus ="pass";
 
  
 
+//code to write back json array into new worksheet
 
-// var convert = function () {
-//   var xlsx = json2xlsx(jsonarray);
-//   fs.writeFileSync(fileaddress, xlsx, 'binary', (err) => {
-//      if (err) {
-//            console.log("writeFileSync :", err);
-//       }
-//     console.log( filename+" file is saved!");
-//  });
-// }
+var workbook2= xlsx.utils.book_new;
+var workbook2= xlsx.utils.book_new;
+
+
+ //pass your json object in "json to sheet method" as i pass data to log error in sheet
+var Sheet2=xlsx.utils.json_to_sheet(jsonarray)
+ // pass your json object in "json to sheet method" as i pass data to log error in sheet
+ var Sheet2=xlsx.utils.json_to_sheet(jsonarray)
+
+xlsx.utils.book_append_sheet(workbook,Sheet2,"LogError");
+ xlsx.utils.book_append_sheet(workbook,Sheet2,"LogError");
+
+
+//sheet in which you want to write
+xlsx.writeFile(workbook,"NewDatasheet.xlsx")
+
