@@ -1,5 +1,12 @@
-var xlsx=require("xlsx");
 
+// const fs = require('fs');
+
+// var json2xlsx = require('json2xlsx');
+
+var xlsx=require("xlsx");
+var jsonarray;
+var workbook
+var sheet
 // always declare file location to below variable.
 var fileaddress=".\\resource\\Questionare on Regression testing.xlsx";
 
@@ -7,8 +14,8 @@ var fileaddress=".\\resource\\Questionare on Regression testing.xlsx";
 //method to convert excel data into JSon and return that json 
 function exceltojson(filepath)
 {
-var workbook=xlsx.readFile(filepath)
-var sheet= workbook.Sheets["Sheet1"];
+ workbook=xlsx.readFile(filepath)
+ sheet= workbook.Sheets["Sheet1"];
 // convert data into json object
 var data=xlsx.utils.sheet_to_json(sheet);
 return data;
@@ -24,7 +31,7 @@ function ReturnSpecificRowDataInJsonFormat(rowno,addressOfFile)
     addressOfFile=fileaddress;
 
 //calling method which convert excel data into Json  by passing excel path and storing in a variable
-var jsonarray = exceltojson(addressOfFile)
+ jsonarray = exceltojson(addressOfFile)
 
     var index = [];
 for (var x in jsonarray) {
@@ -40,26 +47,19 @@ var specificdataofrow= ReturnSpecificRowDataInJsonFormat(5)
 
 //adding new key and value in json array. Syntex is jsonobject.newKey="value"
 specificdataofrow.TestCaseStatus ="pass";
-console.log(specificdataofrow)
+
+//var workbook2= xlsx.utils.book_new;
 
 
+ 
 
 
-    //method to get value from  a particular column
-// var newdata=data.map(function(record)
-// {
-//     // give the column name as i do record.Domain to get value from a particular column
-//     var cellvalue=record.Domain;
-// })
-
-// //var workbook2= xlsx.utils.book_new;
-
-
-// // pass your json object in "json to sheet method" as i pass data to log error in sheet
-// var Sheet2=xlsx.utils.json_to_sheet(data)
-
-// xlsx.utils.book_append_sheet(workbook,Sheet2,"LogError");
-
-
-// //sheet in which you want to write
-// xlsx.writeFile(workbook,"NewDatasheet.xlsx")
+// var convert = function () {
+//   var xlsx = json2xlsx(jsonarray);
+//   fs.writeFileSync(fileaddress, xlsx, 'binary', (err) => {
+//      if (err) {
+//            console.log("writeFileSync :", err);
+//       }
+//     console.log( filename+" file is saved!");
+//  });
+// }
