@@ -4,6 +4,10 @@ var jsonarray;
 var workbook
 var sheet
 
+describe('excel to json',function(){
+    it(',json to excel conversion ',function(){  
+
+
 // always declare file location to below variable.
 var fileaddress=".\\resource\\Questionare on Regression testing.xlsx";
 
@@ -45,6 +49,8 @@ var specificdataofrow= ReturnSpecificRowDataInJsonFormat(5)
 //adding new key and value in json array. Syntex is jsonobject.newKey="value"
 specificdataofrow.TestCaseStatus ="pass";
 
+
+
  //code to write back json array into new worksheet
 
  //calling method which write back into same excel after appending a new sheet
@@ -66,3 +72,7 @@ function jsonToExcel()
  xlsx.writeFile(workbook,fileaddress)
 
 }
+
+})
+
+})

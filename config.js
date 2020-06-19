@@ -1,6 +1,6 @@
 exports.config={
     seleniumAddress:"http://localhost:4444/wd/hub",
-    specs:['readrowwisedatafromexcel.ts'],
+    specs:['readexcel.js'],
   
 spec: { displayStacktrace: true },
 
@@ -18,9 +18,10 @@ onPrepare: function() {
    browser.get('http://automationpractice.com/index.php')
 },
 
-multiCapabilities:[{
-    browserName:'chrome'
-},
+multiCapabilities:[
+//     {
+//     browserName:'chrome'
+// },
 {
     browserName:'firefox'
 }],

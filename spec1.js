@@ -2,7 +2,8 @@
 let  number=    Math.floor((Math.random() * 100000) + 10000);
 global.username= `xyz${number}@test.com`
 
-
+describe('signup into application',function(){
+    it(',login ',function(){  
 
 
     element(by.className('login')).click();
